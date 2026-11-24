@@ -1,5 +1,5 @@
 import axios from 'axios';
-import type { Note } from '@/types/note';
+import type { Note, NoteTag } from '@/types/note';
 
 const apiClient = axios.create({
   baseURL: 'https://notehub-public.goit.study/api',
@@ -22,6 +22,7 @@ export interface FetchNotesParams {
   page?: number;
   perPage?: number;
   search?: string;
+  tag?: NoteTag;
 }
 
 export type CreateNotePayload = Omit<Note, 'id' | 'createdAt' | 'updatedAt'>;
